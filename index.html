@@ -7,24 +7,31 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-<div class="btns">
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-</div>
-<div id="results"></div>
+    <div class="btns">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
+    <div id="results">
+
+    </div>
+    <div id="score">
+        <p id="pwins">Player wins: 0</p>
+        <p id="cwins">Computer wins: 0</p>
+    </div>
 
     <script>
         let computerSelection = "";
         let playerSelection = "";
         let playerWins = 0;
         let computerWins = 0;
-
         const rock = document.querySelector('#rock');
         const scissors = document.querySelector('#scissors');
         const paper = document.querySelector('#paper');
 
         const results = document.querySelector('#results');
+        const playerWinCount = document.querySelector('#pwins');
+        const compWinCount = document.querySelector('#cwins');
 
         rock.addEventListener('click', () => {
             playerSelection = "rock";
@@ -54,39 +61,53 @@
         function playRound() {
             computerPlay();
 
+            compWinCount.textContent = "Computer wins: " + computerWins;
+            playerWinCount.textContent = "Player wins: " + playerWins;
+
             if (playerSelection === "rock" && computerSelection === "paper" ||
              playerSelection === "paper" && computerSelection === "scissors" ||
               playerSelection === "scissors" && computerSelection === "rock") {
                 results.textContent = "You lose! " + computerSelection + " beats " + playerSelection;
-                return computerWins = computerWins + 1;
+                computerWins += 1;
+                compWinCount.textContent = "Computer wins: " + computerWins;
+                if (computerWins === 5) {
+                    results.textContent = "YOU LOSE! COMPUTER WINS THE GAME!"
+                    compWinCount.textContent = "Computer wins: 5";
+                    playerWinCount.textContent = "Player wins: " + playerWins;
+                    playerWins = 0;
+                    computerWins = 0;
+                }
+
+                return computerWins;
             } 
             else if (playerSelection === "rock" && computerSelection === "scissors" ||
              playerSelection === "paper" && computerSelection === "rock" ||
               playerSelection === "scissors" && computerSelection === "paper") {
                 results.textContent = "You win! " + playerSelection + " beats " + computerSelection;
-                return playerWins = playerWins + 1;
+                playerWins += 1;
+                playerWinCount.textContent = "Player wins: " + playerWins;
+                if (playerWins === 5) {
+                    results.textContent = "YOU WIN! PLAYER WINS THE GAME!"
+                    compWinCount.textContent = "Computer wins: " + computerWins;
+                    playerWinCount.textContent = "Player wins: 5";
+                    playerWins = 0;
+                    computerWins = 0;
+                }
+                return playerWins;
             } 
             else results.textContent = "It's a tie! You both chose " + playerSelection;
         }
 
-        
-        function game() {
-            for (let i = 0; i < 5; i++) {
-            playerSelection = prompt("Rock, Paper, Scissors, Shoot!")
-            playerSelection = playerSelection.toLowerCase();
-            computerPlay();
-            playRound();
-            }
-            if (playerWins > computerWins) {
-                results.textContent = "Winner: You";
-            } else if (computerWins > playerWins) {
-                results.textContent = "Winner: Computer"
-            } else if (computerWins === 1 && playerWins === 1) {
-                results.textContent = "It's a tie! You both won once.";
-            } else { 
-                results.textContent = "It's a tie! You both won " + playerWins + " times.";
-            }
-        }
+ //           if (playerWins > computerWins) {
+ //               results.textContent = "Winner: You";
+ //           } else if (computerWins > playerWins) {
+  //              results.textContent = "Winner: Computer"
+  //          } else if (computerWins === 1 && playerWins === 1) {
+   //             results.textContent = "It's a tie! You both won once.";
+     //       } else { 
+      //          results.textContent = "It's a tie! You both won " + playerWins + " times.";
+     //       }
+   //     }
     </script>
 </body>
 </html>
