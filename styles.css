@@ -1,6 +1,6 @@
 body {
-    background-image: url("https://thumbs.dreamstime.com/b/black-zigzag-line-pattern-yellow-background-abstract-seamless-vector-repeat-great-wallpaper-web-wrapping-paper-fabric-165317188.jpg");
-    background-size: 400px;
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/03ef2fd7-4437-457d-9aef-0ccd1c416d62/d2t88av-58c519d2-6402-4011-999c-5836a69963de.png/v1/fill/w_1024,h_836,q_80,strp/deep_red_background_by_ramzonz_d2t88av-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODM2IiwicGF0aCI6IlwvZlwvMDNlZjJmZDctNDQzNy00NTdkLTlhZWYtMGNjZDFjNDE2ZDYyXC9kMnQ4OGF2LTU4YzUxOWQyLTY0MDItNDAxMS05OTljLTU4MzZhNjk5NjNkZS5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.30GIU4JN0RFFpiDu8XAELrUe3SCAocDHANxDXip4lCQ");
+    background-size: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,18 +15,18 @@ body {
     left: 0px;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(255, 255, 255, 0.7);
     z-index:1;
 }
 
 .popup .content {
-    border: 5px solid black;
+    border: 5px solid rgb(255, 255, 255);
     position: absolute;
     border-radius: 25px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    background: #fff;
+    background: rgb(0, 0, 0);
     width: 450px;
     height: 220px;
     z-index: 2;
@@ -40,12 +40,14 @@ body {
     font-size: 25px;
     top: 20px;
     font-family: 'Finlandica', sans-serif;
+    color: white;
 }
 
 #pscore {
     position: absolute;
     list-style: none;
     font-family: 'Finlandica', sans-serif;
+    color: white;
 }
 
 #cscore {
@@ -53,6 +55,7 @@ body {
     list-style: none;
     bottom: 75px;
     font-family: 'Finlandica', sans-serif;
+    color: white;
 }
 
 .popup .playagain-btn {
@@ -61,8 +64,8 @@ body {
     bottom: 10px;
     width: 100px;
     height: 30px;
-    background: #222;
-    color: white;
+    background: rgb(221, 221, 221);
+    color: rgb(0, 0, 0);
     cursor: pointer;
     font-family: 'Finlandica', sans-serif;
 }
@@ -81,12 +84,13 @@ div {
 }
 
 #score, #results {
+    width: 400px;
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border: 4px solid black;
+    background-color: rgb(0, 0, 0);
+    border: 4px solid rgb(255, 255, 255);
     font-size: calc(1vw + 1vh);
-    color: black;
+    color: rgb(255, 255, 255);
     font-family: 'Finlandica', sans-serif;
     text-align: center;
 }
@@ -109,10 +113,10 @@ div {
 }
 
 .name {
-    background-color: white;
-    border: 4px solid black;
+    background-color: rgb(0, 0, 0);
+    border: 4px solid white;
     font-size: 23px;
-    color: black;
+    color: white;
     padding: 15px;
     padding-left: 5%;
     padding-right: 5%;
@@ -121,10 +125,10 @@ div {
 
 .header {
     width: 100%;
-    background-color: white;
-    border: 4px solid black;
+    background-color: black;
+    border: 4px solid white;
     font-size: 40px;
-    color: black;
+    color: white;
     padding: 10px;
     padding-left: 10%;
     padding-right: 10%;
@@ -139,22 +143,23 @@ div {
 }
 
 button {
-    background-color: white;
+    background-color: black;
     border-radius: 100px;
     width: 150px;
     height: 150px;
     margin: 10px;
-    border: 4px solid black;
+    border: 4px solid white;
     cursor: pointer;
     transition: box-shadow 0.07s ease-out 100ms;
 }
 
 button:hover {
-    box-shadow: rgba(34, 24, 24, 0.1) 0px 4px 16px, rgba(44, 38, 38, 0.26) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    box-shadow: rgba(196, 195, 195, 0.1) 0px 4px 16px, rgba(179, 165, 165, 0.26) 0px 8px 24px rgba(157, 157, 161, 0.1).1 0px 16px 56px;
 }
 
 button img {
     border-radius: 100px;
     width: 100%;
     height: 100%;
+    filter: invert(100%);
 }
