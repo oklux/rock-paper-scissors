@@ -1,11 +1,14 @@
 body {
     background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/03ef2fd7-4437-457d-9aef-0ccd1c416d62/d2t88av-58c519d2-6402-4011-999c-5836a69963de.png/v1/fill/w_1024,h_836,q_80,strp/deep_red_background_by_ramzonz_d2t88av-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODM2IiwicGF0aCI6IlwvZlwvMDNlZjJmZDctNDQzNy00NTdkLTlhZWYtMGNjZDFjNDE2ZDYyXC9kMnQ4OGF2LTU4YzUxOWQyLTY0MDItNDAxMS05OTljLTU4MzZhNjk5NjNkZS5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.30GIU4JN0RFFpiDu8XAELrUe3SCAocDHANxDXip4lCQ");
     background-size: 200px;
+    margin: 0;
+}
+
+.container-fluid {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
 }
 
 .popup .overlay {

@@ -11,34 +11,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Finlandica&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="top">
-        <p class="header">ROCK PAPER SCISSORS</p>
-        <p class="name">by oklux</p>
-    </div>
-    <div class="btns">
-        <button id="rock"><img src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296854_960_720.png"></button>
-        <button id="paper"><img src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296855_960_720.png"></button>
-        <button id="scissors"><img src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296853_960_720.png"></button>
-    </div>
-    <div id="results">
-        Choose your weapon to play!<br>First to 5 wins!
-    </div>
-    <div id="score">
-        <li id="pwins">Player score: 0</li>
-        <li id="cwins">Computer score: 0</li>
-    </div>
-    <div class="popup" id="popup-1">
-        <div class="overlay"></div>
-        <div class="content" id="cont">
-            <h1 class="popup-header">You lose! Computer wins the game!</h1>
-            <p class="final-score">
-                <li id="pscore">Player score: 0</li>
-                <li id="cscore">Computer score: 0</li>
-            </p>
-            <div class="playagain-btn">Play Again</div>
+    <div class="container-fluid">
+        <div class="top">
+            <p class="header">ROCK PAPER SCISSORS</p>
+            <p class="name">by oklux</p>
         </div>
-      </div>
-
+        <div class="btns">
+            <button id="rock"><img src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296854_960_720.png"></button>
+            <button id="paper"><img src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296855_960_720.png"></button>
+            <button id="scissors"><img src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296853_960_720.png"></button>
+        </div>
+        <div id="results">
+            Choose your weapon to play!<br>First to 5 wins!
+        </div>
+        <div id="score">
+            <li id="pwins">Player score: 0</li>
+            <li id="cwins">Computer score: 0</li>
+        </div>
+        <div class="popup" id="popup-1">
+            <div class="overlay"></div>
+            <div class="content" id="cont">
+                <h1 class="popup-header">You lose! Computer wins the game!</h1>
+                <p class="final-score">
+                    <li id="pscore">Player score: 0</li>
+                    <li id="cscore">Computer score: 0</li>
+                </p>
+                <div class="playagain-btn">Play Again</div>
+            </div>
+        </div>
+    </div>
     <script>
         let computerSelection = "";
         let playerSelection = "";
