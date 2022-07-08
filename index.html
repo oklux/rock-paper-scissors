@@ -21,14 +21,22 @@
         <button id="scissors"><img src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296853_960_720.png"></button>
     </div>
     <div id="results">
-        Choose your weapon to play! First to 5 wins!
+        Choose your weapon to play!<br>First to 5 wins!
     </div>
     <div id="score">
-        <p id="pwins">Player score: 0</p>
-        <p id="cwins">Computer score: 0</p>
+        <li id="pwins">Player score: 0</li>
+        <li id="cwins">Computer score: 0</li>
     </div>
-    <div class="popupbox">
-        <div class="popup"></div>
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content" id="cont">
+            <h1 class="popup-header">You lose! Computer wins the game!</h1>
+            <p class="final-score">
+                <li id="pscore">Player score: 0</li>
+                <li id="cscore">Computer score: 0</li>
+            </p>
+            <div class="playagain-btn">Play Again</div>
+        </div>
       </div>
 
     <script>
@@ -36,6 +44,14 @@
         let playerSelection = "";
         let playerWins = 0;
         let computerWins = 0;
+
+        const popupTitle = document.querySelector('.popup-header');
+        const popupPlayerScore = document.querySelector('#pscore');
+        const popupComputerScore = document.querySelector('#cscore');
+        const playAgainBtn = document.querySelector('.playagain-btn');
+        const popupOverlay = document.querySelector('.overlay');
+        const popupContent = document.querySelector('#cont');
+        
         const rock = document.querySelector('#rock');
         const scissors = document.querySelector('#scissors');
         const paper = document.querySelector('#paper');
@@ -44,6 +60,15 @@
         const playerWinCount = document.querySelector('#pwins');
         const compWinCount = document.querySelector('#cwins');
 
+        function refreshPage() {
+            window.location.reload(true);
+        }
+
+        function togglePopup() {
+            popupOverlay.style.cssText += "display: block;";
+            popupContent.style.cssText += "transition: all 300ms ease-in-out; transform: translate(-50%, -50%) scale(1);";
+        }
+        
         rock.addEventListener('click', () => {
             playerSelection = "rock";
             playRound();
@@ -82,12 +107,11 @@
                 computerWins += 1;
                 compWinCount.textContent = "Computer score: " + computerWins;
                 if (computerWins === 5) {
-                    popUp.textContent = "YOU LOSE! COMPUTER WINS THE GAME!";
-                    
-                    compWinCount.textContent = "Computer score: 5";
-                    playerWinCount.textContent = "Player score: " + playerWins;
-                    playerWins = 0;
-                    computerWins = 0;
+                    togglePopup();
+
+                    popupTitle.textContent = "You lose! Computer wins the game!";
+                    popupPlayerScore.textContent = playerWinCount.textContent;
+                    popupComputerScore.textContent = compWinCount.textContent;
                 }
 
                 return computerWins;
@@ -99,16 +123,18 @@
                 playerWins += 1;
                 playerWinCount.textContent = "Player score: " + playerWins;
                 if (playerWins === 5) {
-                    results.textContent = "YOU WIN! PLAYER WINS THE GAME!"
-                    compWinCount.textContent = "Computer score: " + computerWins;
-                    playerWinCount.textContent = "Player score: 5";
-                    playerWins = 0;
-                    computerWins = 0;
+                    togglePopup();
+                    
+                    popupTitle.textContent = "You Win! Player wins the game!"
+                    popupPlayerScore.textContent = playerWinCount.textContent;
+                    popupComputerScore.textContent = compWinCount.textContent;
                 }
                 return playerWins;
             } 
             else results.textContent = "It's a tie! You both chose " + playerSelection + ".";
         };
+
+        playAgainBtn.addEventListener('click', () => window.location.reload(true))
     </script>
 </body>
 </html>
