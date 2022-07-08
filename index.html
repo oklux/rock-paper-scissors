@@ -21,12 +21,15 @@
         <button id="scissors"><img src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296853_960_720.png"></button>
     </div>
     <div id="results">
-        Choose your weapon to play!
+        Choose your weapon to play! First to 5 wins!
     </div>
     <div id="score">
         <p id="pwins">Player score: 0</p>
         <p id="cwins">Computer score: 0</p>
     </div>
+    <div class="popupbox">
+        <div class="popup"></div>
+      </div>
 
     <script>
         let computerSelection = "";
@@ -79,7 +82,8 @@
                 computerWins += 1;
                 compWinCount.textContent = "Computer score: " + computerWins;
                 if (computerWins === 5) {
-                    results.textContent = "YOU LOSE! COMPUTER WINS THE GAME!"
+                    popUp.textContent = "YOU LOSE! COMPUTER WINS THE GAME!";
+                    
                     compWinCount.textContent = "Computer score: 5";
                     playerWinCount.textContent = "Player score: " + playerWins;
                     playerWins = 0;
