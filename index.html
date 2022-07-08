@@ -2,22 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Finlandica&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="top">
+        <p class="header">ROCK PAPER SCISSORS</p>
+        <p class="name">by oklux</p>
+    </div>
     <div class="btns">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+        <button id="rock"><img src="rock.png"></button>
+        <button id="paper"><img src="paper.png"></button>
+        <button id="scissors"><img src="scissors.png"></button>
     </div>
     <div id="results">
-
+        Choose your weapon to play!
     </div>
     <div id="score">
-        <p id="pwins">Player wins: 0</p>
-        <p id="cwins">Computer wins: 0</p>
+        <p id="pwins">Player score: 0</p>
+        <p id="cwins">Computer score: 0</p>
     </div>
 
     <script>
@@ -61,19 +69,19 @@
         function playRound() {
             computerPlay();
 
-            compWinCount.textContent = "Computer wins: " + computerWins;
-            playerWinCount.textContent = "Player wins: " + playerWins;
+            compWinCount.textContent = "Computer score: " + computerWins;
+            playerWinCount.textContent = "Player score: " + playerWins;
 
             if (playerSelection === "rock" && computerSelection === "paper" ||
              playerSelection === "paper" && computerSelection === "scissors" ||
               playerSelection === "scissors" && computerSelection === "rock") {
-                results.textContent = "You lose! " + computerSelection + " beats " + playerSelection;
+                results.textContent = "You lose! " + computerSelection + " beats " + playerSelection + ".";
                 computerWins += 1;
-                compWinCount.textContent = "Computer wins: " + computerWins;
+                compWinCount.textContent = "Computer score: " + computerWins;
                 if (computerWins === 5) {
                     results.textContent = "YOU LOSE! COMPUTER WINS THE GAME!"
-                    compWinCount.textContent = "Computer wins: 5";
-                    playerWinCount.textContent = "Player wins: " + playerWins;
+                    compWinCount.textContent = "Computer score: 5";
+                    playerWinCount.textContent = "Player score: " + playerWins;
                     playerWins = 0;
                     computerWins = 0;
                 }
@@ -83,20 +91,20 @@
             else if (playerSelection === "rock" && computerSelection === "scissors" ||
              playerSelection === "paper" && computerSelection === "rock" ||
               playerSelection === "scissors" && computerSelection === "paper") {
-                results.textContent = "You win! " + playerSelection + " beats " + computerSelection;
+                results.textContent = "You win! " + playerSelection + " beats " + computerSelection + ".";
                 playerWins += 1;
-                playerWinCount.textContent = "Player wins: " + playerWins;
+                playerWinCount.textContent = "Player score: " + playerWins;
                 if (playerWins === 5) {
                     results.textContent = "YOU WIN! PLAYER WINS THE GAME!"
-                    compWinCount.textContent = "Computer wins: " + computerWins;
-                    playerWinCount.textContent = "Player wins: 5";
+                    compWinCount.textContent = "Computer score: " + computerWins;
+                    playerWinCount.textContent = "Player score: 5";
                     playerWins = 0;
                     computerWins = 0;
                 }
                 return playerWins;
             } 
-            else results.textContent = "It's a tie! You both chose " + playerSelection;
-        }
+            else results.textContent = "It's a tie! You both chose " + playerSelection + ".";
+        };
     </script>
 </body>
 </html>
